@@ -35,6 +35,12 @@ void printListRecursive(item *list) {
   }
 }
 
+int isEmpty(item *list) {
+  if (list->next == NULL)
+    return 1;
+  return 0;
+}
+
 int main() {
   item a;
   item *list;
@@ -49,4 +55,6 @@ int main() {
 
   printList(list);
   printListRecursive(list);
+  
+  isEmpty(list) ? printf("Vazia") : printf("Tem elemento");
 }
