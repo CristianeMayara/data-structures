@@ -5,7 +5,6 @@ struct item {
   int value;
   struct item *next;
 };
-
 typedef struct item item;
 
 void insertAtStart(int value, item *element) {
@@ -26,12 +25,12 @@ void printList(item *list) {
   }
 }
 
-void printListRecursive(item *list) {
+void printListRecursively(item *list) {
   item *aux;
   aux = list->next;
   if (aux != NULL) {
     printf("%i", aux->value);
-    printListRecursive(aux);
+    printListRecursively(aux);
   }
 }
 
@@ -39,6 +38,16 @@ int isEmpty(item *list) {
   if (list->next == NULL)
     return 1;
   return 0;
+}
+
+item *findElement(int value, item *list) {
+  item *aux;
+  aux = list;
+
+  while((aux != NULL) && (aux->value != value)) {
+    aux = aux->next;
+  }
+  return aux;
 }
 
 int main() {
@@ -53,8 +62,12 @@ int main() {
   insertAtStart(4, list);
   insertAtStart(5, list);
 
+  printf("\nLista: ");
   printList(list);
-  printListRecursive(list);
-  
-  isEmpty(list) ? printf("Vazia") : printf("Tem elemento");
+  printListRecursively(list);
+
+  isEmpty(list) ? printf("\nLista vazia\n") : printf("\nTem elemento na lista\n");
+
+  item *finded = findElement(1, list);
+  (finded != NULL) ? printf("\nElemento encontrado: %d\n", finded->value) : printf("\nElemento não encontrado\n");
 }
