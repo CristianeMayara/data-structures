@@ -16,9 +16,27 @@ void insertAtStart(int value, item *element) {
   element->next = new;
 }
 
+void printList(item *list) {
+  item *aux;
+  aux = list->next;
+
+  while (aux != NULL) {
+    printf("%i", aux->value);
+    aux = aux->next;
+  }
+}
+
 int main() {
   item a;
   item *list;
   a.next = NULL;
   list = &a;
+
+  insertAtStart(1, list);
+  insertAtStart(2, list);
+  insertAtStart(3, list);
+  insertAtStart(4, list);
+  insertAtStart(5, list);
+
+  printList(list);
 }
