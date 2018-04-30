@@ -8,9 +8,15 @@ struct item {
 
 typedef struct item item;
 
-int main() {
-  printf("Hello\n");
+void insertAtStart(int value, item *element) {
+  item *new;
+  new = malloc(sizeof(item));
+  new->value = value;
+  new->next = element->next;
+  element->next = new;
+}
 
+int main() {
   item a;
   item *list;
   a.next = NULL;
