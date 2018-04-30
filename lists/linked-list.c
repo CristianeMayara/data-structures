@@ -26,6 +26,15 @@ void printList(item *list) {
   }
 }
 
+void printListRecursive(item *list) {
+  item *aux;
+  aux = list->next;
+  if (aux != NULL) {
+    printf("%i", aux->value);
+    printListRecursive(aux);
+  }
+}
+
 int main() {
   item a;
   item *list;
@@ -39,4 +48,5 @@ int main() {
   insertAtStart(5, list);
 
   printList(list);
+  printListRecursive(list);
 }
