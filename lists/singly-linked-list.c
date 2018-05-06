@@ -21,31 +21,6 @@ void pushFront(int value, item *element) {
   element->next = new;
 }
 
-void printList(item *list) {
-  item *aux;
-  aux = list->next;
-
-  while (aux != NULL) {
-    printf("%i", aux->value);
-    aux = aux->next;
-  }
-}
-
-void printListRecursively(item *list) {
-  item *aux;
-  aux = list->next;
-  if (aux != NULL) {
-    printf("%i", aux->value);
-    printListRecursively(aux);
-  }
-}
-
-int isEmpty(item *list) {
-  if (list->next == NULL)
-    return 1;
-  return 0;
-}
-
 item *findElement(int value, item *list) {
   item *aux;
   aux = list;
@@ -89,6 +64,31 @@ void findAndRemoveElementRecursively(int value, item *list) {
   if (list->next->value == value) removeElement(list);
 
   return findAndRemoveElementRecursively (value, list->next);
+}
+
+void printList(item *list) {
+  item *aux;
+  aux = list->next;
+
+  while (aux != NULL) {
+    printf("%i", aux->value);
+    aux = aux->next;
+  }
+}
+
+void printListRecursively(item *list) {
+  item *aux;
+  aux = list->next;
+  if (aux != NULL) {
+    printf("%i", aux->value);
+    printListRecursively(aux);
+  }
+}
+
+int isEmpty(item *list) {
+  if (list->next == NULL)
+    return 1;
+  return 0;
 }
 
 void freeList(item *list) {
