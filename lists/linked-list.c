@@ -13,7 +13,7 @@ item *newList() {
   return head;
 }
 
-void insertAtStart(int value, item *element) {
+void pushFront(int value, item *element) {
   item *new;
   new = malloc(sizeof(item));
   new->value = value;
@@ -91,14 +91,31 @@ void findAndRemoveElementRecursively(int value, item *list) {
   return findAndRemoveElementRecursively (value, list->next);
 }
 
+void freeList(item *list) {
+  if (list == NULL) free(list);
+
+  item *current, *next;
+  current = list;
+  next = list->next;
+
+  while(next != NULL) {
+    free(current);
+    current = next;
+    next = next->next;
+  }
+
+  list->next = NULL;
+  free(list);
+}
+
 int main() {
   item *list = newList();
 
-  insertAtStart(1, list);
-  insertAtStart(2, list);
-  insertAtStart(3, list);
-  insertAtStart(4, list);
-  insertAtStart(5, list);
+  pushFront(1, list);
+  pushFront(2, list);
+  pushFront(3, list);
+  pushFront(4, list);
+  pushFront(5, list);
 
   printf("\nLista: ");
   printList(list);
@@ -120,4 +137,6 @@ int main() {
   findAndRemoveElementRecursively(5, list);
   printList(list);
   printf("\n");
+
+  freeList(list);
 }
