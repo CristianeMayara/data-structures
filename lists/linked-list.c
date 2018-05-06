@@ -77,6 +77,14 @@ void findAndRemoveElement(int value, item *list) {
     removeElement(previous);
 }
 
+void findAndRemoveElementRecursively(int value, item *list) {
+  if (list == NULL) return;
+  if (list->next == NULL) return;
+  if (list->next->value == value) removeElement(list);
+  
+  return findAndRemoveElementRecursively (value, list->next);
+}
+
 int main() {
   item a;
   item *list;
@@ -103,5 +111,9 @@ int main() {
 
   printf("\n");
   findAndRemoveElement(1, list);
+  printList(list);
+
+  printf("\n");
+  findAndRemoveElementRecursively(5, list);
   printList(list);
 }
