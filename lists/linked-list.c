@@ -56,6 +56,27 @@ item *findElementRecursively(int value, item *list) {
   return findElementRecursively (value, list->next);
 }
 
+void removeElement(item *previous) {
+  item *trash;
+  trash = previous->next;
+  previous->next = trash->next;
+  free(trash);
+}
+
+void findAndRemoveElement(int value, item *list) {
+  item *previous, *trash;
+  previous = list;
+  trash = list->next;
+
+  while((trash != NULL) && (trash->value != value)) {
+    previous = trash;
+    trash = trash->next;
+  }
+  
+  if(trash != NULL)
+    removeElement(previous);
+}
+
 int main() {
   item a;
   item *list;
@@ -79,4 +100,8 @@ int main() {
 
   item *findedR = findElementRecursively(1, list);
   (findedR != NULL) ? printf("\nElemento encontrado: %d\n", findedR->value) : printf("\nElemento não encontrado\n");
+
+  printf("\n");
+  findAndRemoveElement(1, list);
+  printList(list);
 }
