@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct item {
+typedef struct item {
   int value;
   struct item *next;
-};
-typedef struct item item;
+} item;
+
+item *newList() {
+  item *head = (item*)malloc(sizeof(item));
+  head->next = NULL;
+
+  return head;
+}
 
 void insertAtStart(int value, item *element) {
   item *new;
@@ -81,15 +87,12 @@ void findAndRemoveElementRecursively(int value, item *list) {
   if (list == NULL) return;
   if (list->next == NULL) return;
   if (list->next->value == value) removeElement(list);
-  
+
   return findAndRemoveElementRecursively (value, list->next);
 }
 
 int main() {
-  item a;
-  item *list;
-  a.next = NULL;
-  list = &a;
+  item *list = newList();
 
   insertAtStart(1, list);
   insertAtStart(2, list);
@@ -116,4 +119,5 @@ int main() {
   printf("\n");
   findAndRemoveElementRecursively(5, list);
   printList(list);
+  printf("\n");
 }
