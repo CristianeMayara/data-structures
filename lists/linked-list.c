@@ -50,6 +50,12 @@ item *findElement(int value, item *list) {
   return aux;
 }
 
+item *findElementRecursively(int value, item *list) {
+  if (list == NULL) return list;
+  if (list->value == value) return list;
+  return findElementRecursively (value, list->next);
+}
+
 int main() {
   item a;
   item *list;
@@ -70,4 +76,7 @@ int main() {
 
   item *finded = findElement(1, list);
   (finded != NULL) ? printf("\nElemento encontrado: %d\n", finded->value) : printf("\nElemento não encontrado\n");
+
+  item *findedR = findElementRecursively(1, list);
+  (findedR != NULL) ? printf("\nElemento encontrado: %d\n", findedR->value) : printf("\nElemento não encontrado\n");
 }
