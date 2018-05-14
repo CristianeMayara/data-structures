@@ -70,3 +70,14 @@ void removeElement (void *a [], int n, function_ptr function){
   n--;
   heapifyDown (a, n, 1, function);
 }
+
+/*
+  Build a Max Heap given an array of numbers.
+*/
+void build (void *a [], int n, function_ptr function){
+  int i;
+
+  for (i = LAST_PARENT; i >= 1; i--){
+    heapifyDown (a, n, i, function);
+  }
+}
