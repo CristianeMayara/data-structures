@@ -48,3 +48,25 @@ void heapifyUp (void *a [], int i, function_ptr function){
     else break;
   }
 }
+
+/*
+  This method will insert new element in to heap.
+*/
+void insert (void *a [], int n, void *x, function_ptr function){
+    n++;
+    a[n] = x;
+    heapifyUp (a, n, function);
+}
+
+/*
+  This method will remove the element at n index.
+*/
+void removeElement (void *a [], int n, function_ptr function){
+  void *aux;
+
+  aux = a[1];
+  a[1] = a[n];
+  a[n] = aux;
+  n--;
+  heapifyDown (a, n, 1, function);
+}
