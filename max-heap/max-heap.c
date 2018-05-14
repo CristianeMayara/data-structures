@@ -11,6 +11,21 @@
 #define LAST_PARENT (n >> 1)
 
 /*
+  To compare two elements of the heap.
+*/
+int compareInt (const int *a, const int *b){
+  return (*a - *b);
+}
+
+int compareDbl (const int *a, const int *b){
+  return (*a - *b);
+}
+
+int compareChar (const char *a, const char *b){
+  return (*a - *b);
+}
+
+/*
   This method used to maintain the heap property while deleting an element.
 */
 void heapifyDown (void *a [], int n, int i, function_ptr function){
@@ -79,5 +94,22 @@ void build (void *a [], int n, function_ptr function){
 
   for (i = LAST_PARENT; i >= 1; i--){
     heapifyDown (a, n, i, function);
+  }
+}
+
+/*
+  Sorts the elements of the heap according to a specified function.
+*/
+void heapsort4 (void *a [], int n, function_ptr function){
+  int i;
+  void *aux;
+
+  build (a, n, function);
+  while (n >= 1){
+    aux = a[n];
+    a[n] = a[1];
+    a[1] = aux;
+    n--;
+    heapifyDown (a, n, 1, function);
   }
 }
