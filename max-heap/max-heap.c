@@ -31,3 +31,20 @@ void heapifyDown (void *a [], int n, int i, function_ptr function){
   }
   a[i] = aux;
 }
+
+/*
+  This method used to maintain the heap property while inserting an element.
+*/
+void heapifyUp (void *a [], int i, function_ptr function){
+  void *aux;
+
+  while (i >= 2){ // PARENT >= 1
+    if ( function (&a[PARENT], &a[i]) < 0 ){ // compares with the parent
+      aux = a[PARENT];
+      a[PARENT] = a[i];
+      a[i] = aux;
+      i = PARENT; // i receives parent
+    }
+    else break;
+  }
+}
