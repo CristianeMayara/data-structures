@@ -113,3 +113,26 @@ void heapsort4 (void *a [], int n, function_ptr function){
     heapifyDown (a, n, 1, function);
   }
 }
+
+/*
+  To display the heap.
+*/
+void printInt (int *a [], int n){
+  int i;
+  for (i = 1; i <= n; i++) printf("%d ", *a[i]);
+}
+
+void printDbl (double *a [], int n){
+  int i;
+  for (i = 1; i <= n; i++) printf("%0.2lf ", *a[i]);
+}
+
+void printChar (char *a [], int n){
+  int i;
+  for (i = 1; i <= n; i++) printf("%c ", *a[i]);
+}
+
+void printStr (char *a [], int n){
+  int i;
+  for (i = 1; i <= n; i++) printf("%s ", a[i]);
+}
