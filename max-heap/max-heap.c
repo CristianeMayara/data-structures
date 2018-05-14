@@ -4,11 +4,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define LEFT ((i) << 1)
-#define RIGHT (( (i) << 1 ) + 1)
-#define PARENT ((i) >> 1)
-#define LAST_PARENT (n >> 1)
+#include <string.h>
+#include "max-heap.h"
 
 /*
   To compare two elements of the heap.
