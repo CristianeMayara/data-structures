@@ -97,7 +97,7 @@ void build (void *a [], int n, function_ptr function){
 /*
   Sorts the elements of the heap according to a specified function.
 */
-void heapsort4 (void *a [], int n, function_ptr function){
+void heapsort (void *a [], int n, function_ptr function){
   int i;
   void *aux;
 

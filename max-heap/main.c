@@ -6,26 +6,26 @@
 int main(){
   int i;
 
-  int *vet [10];
+  int *array [10];
 
   for (i = 0; i < 10; i++){
-      vet[i] = (int*) malloc( sizeof(int) );
+      array[i] = (int*) malloc( sizeof(int) );
   }
 
-  *vet[1] = 3;
-  *vet[2] = 5;
-  *vet[3] = 1;
-  *vet[4] = 20;
-  *vet[5] = 11;
-  *vet[6] = 4;
-  *vet[7] = 8;
-  *vet[8] = 9;
+  *array[1] = 3;
+  *array[2] = 5;
+  *array[3] = 1;
+  *array[4] = 20;
+  *array[5] = 11;
+  *array[6] = 4;
+  *array[7] = 8;
+  *array[8] = 9;
 
   
-  printInt(vet, 8);
-  heapsort4 ((void*)vet, 8, (function_ptr) compareInt);
+  printInt(array, 8);
+  heapsort ((void*)array, 8, (function_ptr) compareInt);
   printf("\n\n");
-  printInt(vet, 8);
+  printInt(array, 8);
   printf("\n\n");
 
   return(0);

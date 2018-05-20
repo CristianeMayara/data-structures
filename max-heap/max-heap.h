@@ -15,7 +15,7 @@ void heapifyUp (void *a [], int i, function_ptr function);
 void insert (void *a [], int n, void *x, function_ptr function);
 void removeElement (void *a [], int n, function_ptr function);
 void build (void *a [], int n, function_ptr function);
-void heapsort4 (void *a [], int n, function_ptr function);
+void heapsort (void *a [], int n, function_ptr function);
 void printInt (int *a [], int n);
 void printDbl (double *a [], int n);
 void printChar (char *a [], int n);
