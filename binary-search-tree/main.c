@@ -4,4 +4,7 @@
 
 int main() {
   Tree* t = NULL;
+
+  t = addElement(t, 5);
+  t = addElement(t, 7);
 }

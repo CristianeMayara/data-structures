@@ -7,4 +7,6 @@ typedef struct node {
     struct node *right;
 } Tree;
 
+Tree *addElement(Tree* tree, int value);
+
 #endif // BINARY_SEARCH_TREE_H
