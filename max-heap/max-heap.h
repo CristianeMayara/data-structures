@@ -1,5 +1,5 @@
-#ifndef HEAP_H
-#define HEAP_H
+#ifndef MAX_HEAP_H
+#define MAX_HEAP_H
 
 #define LEFT ((i) << 1)
 #define RIGHT (( (i) << 1 ) + 1)
@@ -21,4 +21,4 @@ void printDbl (double *a [], int n);
 void printChar (char *a [], int n);
 void printStr (char *a [], int n);
 
-#endif // HEAP_H
+#endif // MAX_HEAP_H
