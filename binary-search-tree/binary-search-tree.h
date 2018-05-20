@@ -8,5 +8,6 @@ typedef struct node {
 } Tree;
 
 Tree *addElement(Tree* tree, int value);
+Tree *findElement(Tree * tree, int value);
 
 #endif // BINARY_SEARCH_TREE_H

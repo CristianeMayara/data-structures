@@ -22,3 +22,12 @@ Tree *addElement(Tree *tree, int value) {
 
   return tree;
 }
+
+Tree *findElement(Tree *tree, int value) {
+  if (tree == NULL) return NULL;
+  if (tree->value == value) return tree;
+  if (tree->value > value)
+    return findElement(tree->left, value);
+
+  return findElement(tree->right, value);
+}
