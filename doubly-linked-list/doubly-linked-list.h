@@ -4,7 +4,7 @@
 typedef struct node {
   struct node *prev;
   struct node *next;
-  void *value;
+  int value;
 } node;
 
 typedef struct list {
@@ -13,7 +13,8 @@ typedef struct list {
 } list;
 
 list *createList(void);
-node *createNode(void* value);
-void pushFront(list *list, void *value);
+node *createNode(int value);
+void pushFront(list *list, int value);
+void printList(list *list);
 
 #endif // DOUBLY_LINKED_LIST_H

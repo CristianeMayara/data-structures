@@ -9,7 +9,7 @@ list *createList(void) {
   return list;
 }
 
-node *createNode(void* value) {
+node *createNode(int value) {
   node *node = malloc(sizeof(node));
   node->value = value;
   node->prev = NULL;
@@ -17,7 +17,7 @@ node *createNode(void* value) {
   return node;
 }
 
-void pushFront(list *list, void *value) {
+void pushFront(list *list, int value) {
   node *new = createNode(value);
 
   if (!list->size) {
@@ -34,7 +34,18 @@ void pushFront(list *list, void *value) {
     head->prev = new;
     prev->next = new;
   }
-  
+
   list->head = new;
   list->size++;
+}
+
+void printList(list *list) {
+  node *aux;
+  aux = list->head;
+
+  int i;
+  for (i=0; i < list->size; i++) {
+    printf("%d ", aux->value);
+    aux = aux->next;
+  }
 }

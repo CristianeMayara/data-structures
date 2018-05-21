@@ -6,19 +6,22 @@ int main() {
   list *list = createList();
 
   int value = 1;
-
   printf("\nAdicionando valor %d...", value);
-  pushFront(list, &value);
+  pushFront(list, value);
 
   value = 5;
   printf("\nAdicionando valor %d...", value);
-  pushFront(list, &value);
+  pushFront(list, value);
 
   value = 3;
   printf("\nAdicionando valor %d...", value);
-  pushFront(list, &value);
+  pushFront(list, value);
 
   value = 7;
   printf("\nAdicionando valor %d...", value);
-  pushFront(list, &value);
+  pushFront(list, value);
+
+  printf("\n\nLista:\n");
+  printList(list);
+  printf("\n\n");
 }
