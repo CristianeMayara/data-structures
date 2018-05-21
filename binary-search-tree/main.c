@@ -25,4 +25,7 @@ int main() {
 
   tree = removeElement(tree, 12);
   printInOrder(tree);
+  
+  printf("\nO pai de 3 e: %d.", findParent(tree, 3)->value);
 }
+

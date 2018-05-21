@@ -15,9 +15,9 @@ Tree *addElement(Tree *tree, int value) {
   }
 
   if (tree->value > value) {
-      tree->left = addElement(tree->left, value);
+    tree->left = addElement(tree->left, value);
   } else {
-      tree->right = addElement(tree->right, value);
+    tree->right = addElement(tree->right, value);
   }
 
   return tree;
@@ -30,6 +30,16 @@ Tree *findElement(Tree *tree, int value) {
     return findElement(tree->left, value);
 
   return findElement(tree->right, value);
+}
+
+Tree *findParent(Tree *tree, int value) {
+  if (tree == NULL) return NULL;
+
+  if ((tree->left != NULL) && (tree->left->value == value)) return tree;
+  if ((tree->right != NULL) && (tree->right->value == value)) return tree;
+
+  if (tree->value > value) return findParent(tree->left, value);
+  return findParent(tree->right, value);
 }
 
 Tree *findMinimum(Tree *tree) {
