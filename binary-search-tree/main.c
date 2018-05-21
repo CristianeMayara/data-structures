@@ -15,6 +15,8 @@ int main() {
   tree = addElement(tree, 6);
   tree = addElement(tree, 1);
 
+  printInOrder(tree);
+
   if (findElement(tree, 35) == NULL) {
     printf("\nElemento não encontrado.");
   } else {

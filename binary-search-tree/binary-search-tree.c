@@ -31,3 +31,11 @@ Tree *findElement(Tree *tree, int value) {
 
   return findElement(tree->right, value);
 }
+
+void printInOrder(Tree *tree) {
+  if (tree == NULL) return;
+
+  printInOrder(tree->left);
+  printf(" %d ", tree->value);
+  printInOrder(tree->right);
+}
