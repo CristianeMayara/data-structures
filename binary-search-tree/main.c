@@ -22,4 +22,7 @@ int main() {
   } else {
     printf("\nElemento encontrado.");
   }
+
+  tree = removeElement(tree, 12);
+  printInOrder(tree);
 }

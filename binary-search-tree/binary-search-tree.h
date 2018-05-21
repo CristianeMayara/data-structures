@@ -9,6 +9,8 @@ typedef struct node {
 
 Tree *addElement(Tree* tree, int value);
 Tree *findElement(Tree * tree, int value);
+Tree *findMinimum(Tree *tree);
+Tree *removeElement(Tree *tree, int value);
 void printInOrder(Tree* tree);
 
 #endif // BINARY_SEARCH_TREE_H

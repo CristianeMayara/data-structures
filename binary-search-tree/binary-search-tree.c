@@ -32,6 +32,40 @@ Tree *findElement(Tree *tree, int value) {
   return findElement(tree->right, value);
 }
 
+Tree *findMinimum(Tree *tree) {
+  if (tree == NULL) return tree;
+  if (tree->left == NULL) return tree;
+  return findMinimum(tree->left);
+}
+
+Tree *removeElement(Tree *tree, int value) {
+  Tree *aux;
+
+  if (tree == NULL) return tree;
+
+  if (value < tree->value) {
+    tree->left = removeElement(tree->left, value);
+
+  } else if (value > tree->value) {
+    tree->right = removeElement(tree->right, value);
+
+  } else if (tree->left && tree->right) {
+    aux = findMinimum(tree->right);
+    tree->value = aux->value;
+    tree->right = removeElement(tree->right, tree->value);
+    
+  } else {
+    aux = tree;
+    if (tree->left == NULL) {
+      tree = tree->right;
+    } else if (tree->right == NULL) {
+      tree = tree->left;
+    }
+    free(aux);
+  }
+  return tree;
+}
+
 void printInOrder(Tree *tree) {
   if (tree == NULL) return;
 
