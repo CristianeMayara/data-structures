@@ -53,3 +53,32 @@ void printList(list *list) {
 int isEmpty(list *list) {
   return list->size == 0;
 }
+
+void freeNode(node *node) {
+  free(node->prev);
+  free(node->next);
+  free(node);
+}
+
+void removeFront(list *list) {
+  node *head = list->head;
+
+  if (isEmpty(list)) return;
+
+  if (list->size == 1) {
+    list->head = NULL;
+
+  } else {
+    node *next = head->next;
+    node *prev = head->prev;
+
+    list->head = next;
+
+    next->prev = prev;
+    prev->next = next;
+  }
+
+  freeNode(head);
+
+  list->size--;
+}

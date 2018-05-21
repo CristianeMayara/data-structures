@@ -17,5 +17,7 @@ node *createNode(int value);
 void pushFront(list *list, int value);
 void printList(list *list);
 int isEmpty(list *list);
+void freeNode(node *node);
+void removeFront(list *list);
 
 #endif // DOUBLY_LINKED_LIST_H

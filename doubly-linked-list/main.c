@@ -26,4 +26,11 @@ int main() {
   printf("\n\n");
 
   isEmpty(list) ? printf("Lista vazia.\n") : printf("Lista com elementos.\n");
+
+  printf("\nRemovendo valor %d...", list->head->value);
+  removeFront(list);
+
+  printf("\n\nLista:\n");
+  printList(list);
+  printf("\n\n");
 }
