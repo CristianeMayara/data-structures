@@ -24,4 +24,6 @@ int main() {
   printf("\n\nLista:\n");
   printList(list);
   printf("\n\n");
+
+  isEmpty(list) ? printf("Lista vazia.\n") : printf("Lista com elementos.\n");
 }

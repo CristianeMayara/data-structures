@@ -49,3 +49,7 @@ void printList(list *list) {
     aux = aux->next;
   }
 }
+
+int isEmpty(list *list) {
+  return list->size == 0;
+}
