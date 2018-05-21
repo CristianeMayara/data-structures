@@ -19,14 +19,19 @@ int main() {
   printPreOrder(tree); printf("\n\n");
   printPostOrder(tree);
 
-  if (findElement(tree, 35) == NULL) {
-    printf("\nElemento não encontrado.\n");
-  } else {
-    printf("\nElemento encontrado.\n");
-  }
+  if (findElement(tree, 35) == NULL)
+    printf("\n\nElemento não encontrado.\n\n");
+  else
+    printf("\n\nElemento encontrado.\n\n");
 
   tree = removeElement(tree, 14);
   printInOrder(tree);
+
+  Tree *aux = findInOrderSuccessor(tree, 7);
+  if (aux != NULL)
+    printf("\n\nO sucessor de 7 e: %d.\n", aux->value);
+  else
+    printf("\n\nO valor não tem sucessor.\n");
 
   printf("\nO pai de 3 e: %d.\n", findParent(tree, 3)->value);
 

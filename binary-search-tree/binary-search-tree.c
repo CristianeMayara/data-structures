@@ -48,6 +48,28 @@ Tree *findMinimum(Tree *tree) {
   return findMinimum(tree->left);
 }
 
+Tree *findInOrderSuccessor(Tree *tree, int value) {
+  Tree *aux, *parent;
+  aux = tree;
+  
+  // Case 0:
+  if (tree == NULL) return NULL;
+
+  aux = findElement(tree, value);
+
+  // Case 1:
+  if (aux->right != NULL) return findMinimum(aux->right);
+  
+  // Case 2:
+  parent = findParent(tree, aux->value);
+
+  while((parent != NULL) && (aux == parent->right)) {
+    aux = parent;
+    parent = findParent(tree, parent->value);
+  }
+  return parent;
+}
+
 Tree *removeElement(Tree *tree, int value) {
   Tree *aux;
 
