@@ -15,9 +15,9 @@ Tree *addElement(Tree *tree, int value) {
   }
 
   if (tree->value > value) {
-    tree->left = addElement(tree->left, value);
+      tree->left = addElement(tree->left, value);
   } else {
-    tree->right = addElement(tree->right, value);
+      tree->right = addElement(tree->right, value);
   }
 
   return tree;
@@ -76,10 +76,18 @@ Tree *removeElement(Tree *tree, int value) {
   return tree;
 }
 
+void freeTree(Tree *tree) {
+  if (tree == NULL) return;
+
+  freeTree(tree->left);
+  freeTree(tree->right); 
+  free(tree);
+}
+
 void printInOrder(Tree *tree) {
   if (tree == NULL) return;
 
   printInOrder(tree->left);
-  printf(" %d ", tree->value);
+  printf("%d ", tree->value);
   printInOrder(tree->right);
 }

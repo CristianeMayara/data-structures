@@ -18,14 +18,15 @@ int main() {
   printInOrder(tree);
 
   if (findElement(tree, 35) == NULL) {
-    printf("\nElemento não encontrado.");
+    printf("\nElemento não encontrado.\n");
   } else {
-    printf("\nElemento encontrado.");
+    printf("\nElemento encontrado.\n");
   }
 
-  tree = removeElement(tree, 12);
+  tree = removeElement(tree, 14);
   printInOrder(tree);
-  
-  printf("\nO pai de 3 e: %d.", findParent(tree, 3)->value);
-}
 
+  printf("\nO pai de 3 e: %d.\n", findParent(tree, 3)->value);
+
+  freeTree(tree);
+}

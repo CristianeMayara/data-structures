@@ -12,6 +12,7 @@ Tree *findElement(Tree * tree, int value);
 Tree *findParent(Tree * tree, int value);
 Tree *findMinimum(Tree *tree);
 Tree *removeElement(Tree *tree, int value);
+void freeTree(Tree *tree);
 void printInOrder(Tree* tree);
 
 #endif // BINARY_SEARCH_TREE_H
