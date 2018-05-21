@@ -91,3 +91,19 @@ void printInOrder(Tree *tree) {
   printf("%d ", tree->value);
   printInOrder(tree->right);
 }
+
+void printPreOrder(Tree *tree) {
+  if (tree == NULL) return;
+
+  printInOrder(tree->left);
+  printInOrder(tree->right);
+  printf("%d ", tree->value);
+}
+
+void printPostOrder(Tree *tree) {
+  if (tree == NULL) return;
+
+  printf("%d ", tree->value);
+  printInOrder(tree->left);
+  printInOrder(tree->right);
+}

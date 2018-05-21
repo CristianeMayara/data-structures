@@ -14,5 +14,7 @@ Tree *findMinimum(Tree *tree);
 Tree *removeElement(Tree *tree, int value);
 void freeTree(Tree *tree);
 void printInOrder(Tree* tree);
+void printPreOrder(Tree* tree);
+void printPostOrder(Tree* tree);
 
 #endif // BINARY_SEARCH_TREE_H
