@@ -13,5 +13,7 @@ typedef struct Hash {
 } Hash;
 
 itemH *createElement(int value);
+int hashFunction(int value);
+void addElement(Hash *hash, int value);
 
 #endif // HASH_H
