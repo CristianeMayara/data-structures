@@ -1,15 +1,17 @@
 #ifndef HASH_H
 #define HASH_H
 
-#include "doubly-circular-linked-list/doubly-circular-linked-list.h"
+#include "singly-linked-list/singly-linked-list.h"
 #define HASH_SIZE 20000
 
-typedef struct item {
+typedef struct itemH {
   int value;
-} item;
+} itemH;
 
 typedef struct Hash {
   list array[HASH_SIZE];   
 } Hash;
+
+itemH *createElement(int value);
 
 #endif // HASH_H
