@@ -15,5 +15,6 @@ typedef struct Hash {
 itemH *createElement(int value);
 int hashFunction(int value);
 void addElement(Hash *hash, int value);
+void freeHash(Hash *hash);
 
 #endif // HASH_H
