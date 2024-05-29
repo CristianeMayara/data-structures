@@ -20,5 +20,6 @@ int isEmpty(list *list);
 node *findOccurrence(list *list, int value);
 void freeNode(node *node);
 void removeFront(list *list);
+void removeElement(list *list, int value);
 
 #endif // DOUBLY_CIRCULAR_LINKED_LIST_H

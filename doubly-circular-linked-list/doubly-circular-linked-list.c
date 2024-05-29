@@ -61,6 +61,7 @@ node *findOccurrence(list *list, int value) {
   int i;
   for (i = 0; i < list->size; i++) {
     if (aux->value == value) return aux;
+    aux = aux->next;
   }
   return NULL;
 }
@@ -90,6 +91,18 @@ void removeFront(list *list) {
   }
 
   freeNode(head);
+  list->size--;
+}
 
+void removeElement(list *list, int value) {
+  node *trash = findOccurrence(list, value);
+
+  if (trash == NULL) printf("Is null");
+
+  
+  trash->prev->next = trash->next;
+  trash->next->prev = trash->prev;
+
+  free(trash);
   list->size--;
 }

@@ -36,7 +36,15 @@ int main() {
 
   value = 3;
   findOccurrence(list, 3)
-    ? printf("\nO valor %d esta na lista.\n\n", value) 
-    : printf("\nO valor %d nao esta na lista.\n\n", value);
+    ? printf("\nO valor %d esta na lista.\n", value) 
+    : printf("\nO valor %d nao esta na lista.\n", value);
+
+  value = 1;
+  printf("\nRemovendo valor %d...", value);
+  removeElement(list, value);
+
+  printf("\n\nLista:\n");
+  printList(list);
+  printf("\n\n");
   
 }
